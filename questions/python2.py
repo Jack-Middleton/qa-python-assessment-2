@@ -31,7 +31,13 @@
 # How does a for loop iterate through a string?
 
 def one(string):
-    return ""
+    triple = []
+    for character in string:
+        triple.append(character * 3)
+    output = "".join(triple)
+    return output
+
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -52,7 +58,20 @@ def one(string):
 
 
 def two(number):
-    return False
+    for x in range(1, number):
+        if x == 1:
+            if number % x == 0:
+                pass
+        elif x == number:
+            if number % x == 0:
+                pass
+        elif number % x == 1:
+             pass
+        elif number % x == 0:
+            return False
+    return True
+
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +91,16 @@ def two(number):
 
 
 def three(a):
-    return 1
+    conv = str(a)
+    two = 2 * conv
+    three = 3 * conv
+    four = 4 * conv
+    conv_2 = int(two)
+    conv_3 = int(three)
+    conv_4 = int(four)
+    sum = a + conv_2 + conv_3 + conv_4
+    return sum
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -104,7 +132,17 @@ def three(a):
 
 
 def four(string1, string2):
-    return ""
+    zipped = []
+    first_split = list(string1)
+    second_split = list(string2)
+    length = len(first_split)
+    for x in range(0, length):
+        zipped.append(first_split[x])
+        zipped.append(second_split[x])
+    output = "".join(zipped)
+    return output
+
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -122,9 +160,15 @@ def four(string1, string2):
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
 
+from random import randint
 
 def five():
-    return []
+    output = []
+    while len(output) < 5:
+        rand_num = randint(100,200)
+        if rand_num % 2 == 0:
+            output.append(rand_num)
+    return output
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -146,7 +190,13 @@ def five():
 
 
 def six(string):
-    return False
+    reverse = string[::-1].lower()
+    list_reverse = list(reverse)
+    if list_reverse[0] == 'y' and list_reverse[1] == 'p':
+        return True
+    else:
+        return False
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -173,7 +223,12 @@ def six(string):
 
 
 def seven(a, b, c):
-    return False
+    list = [a,b,c]
+    list.sort()
+    if (list[2] - list[1]) == (list[1] - list[0]):
+        return True
+    else:
+        return False 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -194,7 +249,17 @@ def seven(a, b, c):
 
 
 def eight(string,  a):
-    return ""
+    if a == len(string):
+        return ""
+    elif a == 1:
+        div = len(string)//2
+        mod = (len(string) + 1) % 2
+        return string[:div - mod] + string[div + 1:]
+    else:
+        div = len(string)//a
+        mod = (len(string)+ a) % 2
+        return string[:div - mod] + string[div + a:]
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -214,6 +279,21 @@ def eight(string,  a):
 
 
 def nine(string1, string2):
+
+    count = 0 
+    if count < len(string1):
+        for character in string1:
+            if character in string2:
+                count += 1
+    if count == len(string1):
+        return True
+    count = 0
+    if count < len(string2):
+        for character in string2:
+            if character in string1:
+                count += 1
+    if count == len(string2):
+        return True
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -235,6 +315,13 @@ def nine(string1, string2):
 
 
 def ten(x, y):
-    return []
+    multi_list = []
+    for i in range(y):
+        row = []
+        for n in range(x):
+            row.append(i * n)
+        multi_list.append(row)
+    return multi_list
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
